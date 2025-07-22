@@ -9,7 +9,10 @@ export default function RootLayout() {
   return (
     <QueryClientProvider client={queryClient}>
       <Stack>
-        <Stack.Screen name="index" />
+        <Stack.Screen
+          name="index"
+          options={{ title: "Disney Character Gallery" }}
+        />
       </Stack>
     </QueryClientProvider>
   );

@@ -9,7 +9,7 @@ export type Character = {
   _id: number;
   url: string;
   name: string;
-  imageUrl: string;
+  imageUrl?: string;
   sourceUrl?: string;
   films: string[];
   shortFilms: string[];

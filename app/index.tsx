@@ -1,29 +1,26 @@
+import { CharacterList } from "@/components/character/CharacterList/CharacterList";
+import { Loader } from "@/components/Loader/Loader";
 import { useGetAllCharacters } from "@/hooks/useGetAllCharacters";
-import { FlatList, StyleSheet, Text, View } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { StyleSheet, View } from "react-native";
 
 const Gallery = () => {
-  const insets = useSafeAreaInsets();
   const getAllCharactersQuery = useGetAllCharacters();
+  const { isLoading, isFetching } = getAllCharactersQuery;
 
   return (
-    <View style={[styles.container, { paddingBottom: insets.bottom }]}>
-      <FlatList
-        data={getAllCharactersQuery.listData}
-        keyExtractor={(item) => item.url}
-        renderItem={({ item }) => {
-          return (
-            <View>
-              <Text>{item.name}</Text>
-            </View>
-          );
-        }}
-        onEndReached={() => {
-          if (getAllCharactersQuery.hasNextPage) {
-            getAllCharactersQuery.fetchNextPage();
-          }
-        }}
-      />
+    <View style={[styles.container]}>
+      {isLoading && <Loader />}
+      {!isLoading && (
+        <CharacterList
+          isFetching={isFetching}
+          data={getAllCharactersQuery.listData}
+          onEndReached={() => {
+            if (getAllCharactersQuery.hasNextPage) {
+              getAllCharactersQuery.fetchNextPage();
+            }
+          }}
+        />
+      )}
     </View>
   );
 };
@@ -31,7 +28,6 @@ const Gallery = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
   },
 });
 export default Gallery;

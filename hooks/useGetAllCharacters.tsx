@@ -1,11 +1,11 @@
+import { getDisneyCharacters } from "@/api/characters";
+import { Character, GetAllCharactersResponse } from "@/api/characters/models";
+import { getPageFromQueryParams } from "@/utils/getPageFromQueryParams/getPageFromQueryParams";
 import {
   DefinedInitialDataInfiniteOptions,
   InfiniteData,
   useInfiniteQuery,
 } from "@tanstack/react-query";
-import { getDisneyCharacters } from "../api/characters";
-import { Character, GetAllCharactersResponse } from "../api/characters/models";
-import { getPageFromQueryParams } from "../utils/getPageFromQueryParams/getPageFromQueryParams";
 
 type useGetAllCharactersOptions = DefinedInitialDataInfiniteOptions<
   GetAllCharactersResponse,
