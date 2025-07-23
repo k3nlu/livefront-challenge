@@ -1,6 +1,7 @@
 import { Character } from "@/api/characters/models";
 import { Loader } from "@/components/Loader/Loader";
 import { spacing } from "@/constants";
+import { router } from "expo-router";
 import { FlatList, FlatListProps, StyleSheet } from "react-native";
 import { CharacterListItem } from "./CharacterListItem";
 
@@ -18,7 +19,13 @@ export const CharacterList = (props: CharacterListProps) => {
       data={data}
       keyExtractor={(item) => item.url}
       renderItem={({ item }) => {
-        return <CharacterListItem character={item} />;
+        const onPress = () => {
+          router.push({
+            pathname: "/character-details",
+            params: { id: item._id },
+          });
+        };
+        return <CharacterListItem character={item} onPress={onPress} />;
       }}
       ListFooterComponent={
         isFetching ? <Loader containerStyle={styles.loaderContainer} /> : null

@@ -1,8 +1,7 @@
 import { Character } from "@/api/characters/models";
-import { useState } from "react";
+import { Image } from "@/components/Image/Image";
 import {
   Dimensions,
-  Image,
   Pressable,
   PressableProps,
   StyleSheet,
@@ -15,20 +14,13 @@ interface CharacterListItemProps extends PressableProps {
   character: Character;
 }
 
-const placeholderImage =
-  "https://static.wikia.nocookie.net/disney/images/7/7c/Noimage.png";
-
 export const CharacterListItem = (props: CharacterListItemProps) => {
   const { character, ...rest } = props;
-  const [imageError, setImageError] = useState(false);
-  const imageUrl = character.imageUrl || placeholderImage;
+  const imageUrl = character.imageUrl;
+
   return (
     <Pressable {...rest} style={styles.container}>
-      <Image
-        onError={() => setImageError(true)}
-        source={{ uri: imageError ? placeholderImage : imageUrl }}
-        style={styles.image}
-      />
+      <Image uri={imageUrl} style={styles.image} />
     </Pressable>
   );
 };

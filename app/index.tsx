@@ -1,6 +1,6 @@
 import { CharacterList } from "@/components/character/CharacterList/CharacterList";
 import { Loader } from "@/components/Loader/Loader";
-import { useGetAllCharacters } from "@/hooks/useGetAllCharacters";
+import { useGetAllCharacters } from "@/hooks/api/useGetAllCharacters";
 import { StyleSheet, View } from "react-native";
 
 const Gallery = () => {
