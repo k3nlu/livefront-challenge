@@ -1,4 +1,8 @@
-export const getPageFromQueryParams = (url: string): number => {
+export const getPageFromQueryParams = (url: string) => {
   const params = new URL(url).searchParams;
-  return parseInt(params.get("page") || "1", 10);
+  const pageNumber = params.get("page");
+  if (!pageNumber) {
+    return undefined;
+  }
+  return parseInt(pageNumber, 10);
 };
