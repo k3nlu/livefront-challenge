@@ -18,11 +18,7 @@ type useGetAllCharactersOptions = DefinedInitialDataInfiniteOptions<
   number
 >;
 
-type useGetAllCharactersParams = {
-  options?: useGetAllCharactersOptions;
-};
-
-export const useGetAllCharacters = (params?: useGetAllCharactersParams) => {
+export const useGetAllCharacters = (options?: useGetAllCharactersOptions) => {
   const res = useInfiniteQuery({
     queryKey: ["characters"],
     queryFn: ({ pageParam }) => {
@@ -36,7 +32,7 @@ export const useGetAllCharacters = (params?: useGetAllCharactersParams) => {
       return undefined;
     },
     initialPageParam: 1,
-    ...params?.options,
+    ...options,
   });
 
   const listData = res.data?.pages.reduce((acc, curr) => {
