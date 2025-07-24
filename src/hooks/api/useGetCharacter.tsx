@@ -1,5 +1,5 @@
-import { getDisneyCharacterById } from "@/api/characters";
-import { GetCharacterByIdResponse } from "@/api/characters/models";
+import { getDisneyCharacterById } from "@/src/api/characters";
+import { GetCharacterByIdResponse } from "@/src/api/characters/models";
 import { UndefinedInitialDataOptions, useQuery } from "@tanstack/react-query";
 
 type UseGetCharacterOptions = UndefinedInitialDataOptions<

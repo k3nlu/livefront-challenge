@@ -1,6 +1,9 @@
-import { getDisneyCharacters } from "@/api/characters";
-import { Character, GetAllCharactersResponse } from "@/api/characters/models";
-import { getPageFromQueryParams } from "@/utils/getPageFromQueryParams/getPageFromQueryParams";
+import { getDisneyCharacters } from "@/src/api/characters";
+import {
+  Character,
+  GetAllCharactersResponse,
+} from "@/src/api/characters/models";
+import { getPageFromQueryParams } from "@/src/utils/getPageFromQueryParams/getPageFromQueryParams";
 import {
   DefinedInitialDataInfiniteOptions,
   InfiniteData,

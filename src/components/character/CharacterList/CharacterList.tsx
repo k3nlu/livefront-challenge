@@ -1,6 +1,6 @@
-import { Character } from "@/api/characters/models";
-import { Loader } from "@/components/Loader/Loader";
-import { spacing } from "@/constants";
+import { Character } from "@/src/api/characters/models";
+import { Loader } from "@/src/components/Loader/Loader";
+import { spacing } from "@/src/constants";
 import { router } from "expo-router";
 import { FlatList, FlatListProps, StyleSheet } from "react-native";
 import { CharacterListItem } from "./CharacterListItem";

@@ -1,5 +1,5 @@
-import { Character } from "@/api/characters/models";
-import { Image } from "@/components/Image/Image";
+import { Character } from "@/src/api/characters/models";
+import { Image } from "@/src/components/Image/Image";
 import {
   Dimensions,
   Pressable,

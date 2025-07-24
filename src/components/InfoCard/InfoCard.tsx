@@ -1,5 +1,5 @@
-import { colors, radius, spacing } from "@/constants";
-import { Body, Label } from "@/typography";
+import { colors, radius, spacing } from "@/src/constants";
+import { Body, Label } from "@/src/typography";
 import { StyleSheet, View, ViewProps } from "react-native";
 
 interface InfoCardProps extends ViewProps {
