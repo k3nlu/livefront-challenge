@@ -43,7 +43,7 @@
 # 3rd Party libraries used
 
 - [Axios](https://axios-http.com/) for http requests
-- [TanStack Query](https://tanstack.com/query/latest) to easily manage server state
+- [TanStack Query](https://tanstack.com/query/latest) to manage server state
 
 # Unit test
 
