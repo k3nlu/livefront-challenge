@@ -10,7 +10,6 @@
     "web": "expo start --web",
     "lint": "expo lint",
     "test": "jest",
-    "run:ios": "npx expo run:ios",
     "e2e": "maestro test .maestro/app.yml"
   },
   "dependencies": {
