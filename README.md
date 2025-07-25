@@ -45,23 +45,23 @@
 - [Axios](https://axios-http.com/) for http requests
 - [TanStack Query](https://tanstack.com/query/latest) to manage server state
 
-# Unit test
+# Unit tests
 
-To run unit test run the following command:
+To run unit tests run the following command:
 
 ```
 npm run test
 ```
 
-# E2E test
+# E2E tests
 
-e2e test are ran with [Maestro](https://maestro.dev/).
+e2e tests are run with [Maestro](https://maestro.dev/).
 
 ## Installing Maestro
 
-To install Maestro you will need to install the Maestro Cli
+To install Maestro you will need to install the Maestro CLI
 
-To install Maestro cli run the following command:
+To install Maestro CLI run the following command:
 
 ```
 curl -fsSL "https://get.maestro.mobile.dev" | bash

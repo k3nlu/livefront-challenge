@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   ActivityIndicator,
   ActivityIndicatorProps,
@@ -6,7 +6,7 @@ import {
   StyleSheet,
   View,
   ViewStyle,
-} from "react-native";
+} from 'react-native';
 
 interface LoaderProps extends ActivityIndicatorProps {
   containerStyle?: StyleProp<ViewStyle>;
@@ -24,7 +24,7 @@ export const Loader = (props: LoaderProps) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });

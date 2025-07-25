@@ -1,7 +1,7 @@
-import { CharacterList } from "@/src/components/character/CharacterList/CharacterList";
-import { Loader } from "@/src/components/Loader/Loader";
-import { useGetAllCharacters } from "@/src/hooks/api/useGetAllCharacters";
-import { StyleSheet, View } from "react-native";
+import { CharacterList } from '@/src/components/character/CharacterList/CharacterList';
+import { Loader } from '@/src/components/Loader/Loader';
+import { useGetAllCharacters } from '@/src/hooks/api/useGetAllCharacters';
+import { StyleSheet, View } from 'react-native';
 
 const Gallery = () => {
   const getAllCharactersQuery = useGetAllCharacters();
@@ -9,8 +9,9 @@ const Gallery = () => {
 
   return (
     <View style={[styles.container]}>
-      {isLoading && <Loader />}
-      {!isLoading && (
+      {isLoading ? (
+        <Loader />
+      ) : (
         <CharacterList
           isFetching={isFetching}
           data={getAllCharactersQuery.listData}

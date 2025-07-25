@@ -1,10 +1,10 @@
-import { useState } from "react";
-import { ImageProps, Image as RNImage } from "react-native";
+import { useState } from 'react';
+import { ImageProps, Image as RNImage } from 'react-native';
 
 const placeholderImage =
-  "https://static.wikia.nocookie.net/disney/images/7/7c/Noimage.png";
+  'https://static.wikia.nocookie.net/disney/images/7/7c/Noimage.png';
 
-interface ImagePropsWithError extends Omit<ImageProps, "source"> {
+interface ImagePropsWithError extends Omit<ImageProps, 'source'> {
   uri?: string;
 }
 

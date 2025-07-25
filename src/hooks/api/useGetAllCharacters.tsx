@@ -1,14 +1,14 @@
-import { getDisneyCharacters } from "@/src/api/characters";
+import { getDisneyCharacters } from '@/src/api/characters';
 import {
   Character,
   GetAllCharactersResponse,
-} from "@/src/api/characters/models";
-import { getPageFromQueryParams } from "@/src/utils/getPageFromQueryParams/getPageFromQueryParams";
+} from '@/src/api/characters/models';
+import { getPageFromQueryParams } from '@/src/utils/getPageFromQueryParams/getPageFromQueryParams';
 import {
   DefinedInitialDataInfiniteOptions,
   InfiniteData,
   useInfiniteQuery,
-} from "@tanstack/react-query";
+} from '@tanstack/react-query';
 
 type useGetAllCharactersOptions = DefinedInitialDataInfiniteOptions<
   GetAllCharactersResponse,
@@ -20,12 +20,12 @@ type useGetAllCharactersOptions = DefinedInitialDataInfiniteOptions<
 
 export const useGetAllCharacters = (options?: useGetAllCharactersOptions) => {
   const res = useInfiniteQuery({
-    queryKey: ["characters"],
+    queryKey: ['characters'],
     queryFn: ({ pageParam }) => {
       return getDisneyCharacters(pageParam);
     },
     getNextPageParam: (lastPage) => {
-      if (lastPage && lastPage.info.nextPage) {
+      if (lastPage?.info?.nextPage) {
         const nextPage = getPageFromQueryParams(lastPage.info.nextPage);
         return nextPage;
       }

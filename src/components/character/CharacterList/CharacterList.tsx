@@ -1,11 +1,11 @@
-import { Character } from "@/src/api/characters/models";
-import { Loader } from "@/src/components/Loader/Loader";
-import { spacing } from "@/src/constants";
-import { router } from "expo-router";
-import { FlatList, FlatListProps, StyleSheet } from "react-native";
-import { CharacterListItem } from "./CharacterListItem";
+import { Character } from '@/src/api/characters/models';
+import { Loader } from '@/src/components/Loader/Loader';
+import { spacing } from '@/src/constants';
+import { router } from 'expo-router';
+import { FlatList, FlatListProps, StyleSheet } from 'react-native';
+import { CharacterListItem } from './CharacterListItem';
 
-type CharacterListProps = Omit<FlatListProps<Character>, "renderItem"> & {
+type CharacterListProps = Omit<FlatListProps<Character>, 'renderItem'> & {
   isFetching?: boolean;
 };
 
@@ -21,7 +21,7 @@ export const CharacterList = (props: CharacterListProps) => {
       renderItem={({ item, index }) => {
         const onPress = () => {
           router.push({
-            pathname: "/character-details",
+            pathname: '/character-details',
             params: { id: item._id },
           });
         };

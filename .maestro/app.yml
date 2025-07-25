@@ -2,36 +2,36 @@ appId: com.livefront.challenge
 ---
 - launchApp
 - assertVisible:
-    id: "character-item-0"
+    id: character-item-0
 - scrollUntilVisible:
     element:
-      id: "character-item-100"
+      id: character-item-100
     direction: DOWN
     timeout: 50000
     speed: 100
 - scrollUntilVisible:
     element:
-      id: "character-item-28"
+      id: character-item-28
     direction: UP
     timeout: 50000
     speed: 100
 - tapOn:
-    id: "character-item-28"
+    id: character-item-28
 - assertVisible:
-    text: "Character Details"
+    text: Character Details
 - assertVisible:
-    id: "character-image"
+    id: character-image
 - assertVisible:
-    id: "character-name"
+    id: character-name
 - scrollUntilVisible:
     element:
-      id: "park-attractions"
+      id: park-attractions
     direction: DOWN
     timeout: 50000
     speed: 50
 - scrollUntilVisible:
     element:
-      id: "character-image"
+      id: character-image
     direction: UP
     timeout: 50000
     speed: 50
