@@ -1,6 +1,6 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 
-const baseUrl = "https://api.disneyapi.dev/";
+const baseUrl = process.env.EXPO_PUBLIC_API_URL || "";
 
 function generateAxiosInstance(baseUrl: string) {
   const axiosInstance = axios.create({
