@@ -1,12 +1,12 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
+import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 
-const baseUrl = process.env.EXPO_PUBLIC_API_URL || "";
+const baseUrl = process.env.EXPO_PUBLIC_API_URL || '';
 
 function generateAxiosInstance(baseUrl: string) {
   const axiosInstance = axios.create({
     baseURL: baseUrl,
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
   });
 
@@ -18,11 +18,11 @@ function generateApiHelper(baseUrl: string) {
 
   const getRequest = async <Data = any>(
     path: string,
-    config?: AxiosRequestConfig
+    config?: AxiosRequestConfig,
   ) => {
     const result = await axiosInstance.get<Data, AxiosResponse<Data>>(
       path,
-      config
+      config,
     );
     return result.data;
   };

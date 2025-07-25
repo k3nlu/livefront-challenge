@@ -1,6 +1,6 @@
-import { colors, radius, spacing } from "@/src/constants";
-import { Body, Label } from "@/src/typography";
-import { StyleSheet, View, ViewProps } from "react-native";
+import { colors, radius, spacing } from '@/src/constants';
+import { Body, Label } from '@/src/typography';
+import { StyleSheet, View, ViewProps } from 'react-native';
 
 interface InfoCardProps extends ViewProps {
   title?: string;
@@ -16,16 +16,14 @@ export const InfoCard = (props: InfoCardProps) => {
   return (
     <View {...viewProps} style={[styles.container, styles.dropShadow, style]}>
       {title && <Body style={styles.body}>{title}</Body>}
-      {infoItems && infoItems.length > 0 && (
-        <View style={styles.infoContainer}>
-          {infoItems.map((item, index) => (
-            <View key={index} style={styles.infoItem}>
-              <Label>-</Label>
-              <Label>{item}</Label>
-            </View>
-          ))}
-        </View>
-      )}
+      <View style={styles.infoContainer}>
+        {infoItems.map((item, index) => (
+          <View key={index} style={styles.infoItem}>
+            <Label>-</Label>
+            <Label>{item}</Label>
+          </View>
+        ))}
+      </View>
     </View>
   );
 };
@@ -50,14 +48,14 @@ const styles = StyleSheet.create({
     elevation: 4,
   },
   body: {
-    fontWeight: "500",
+    fontWeight: '500',
   },
   infoContainer: {
     rowGap: spacing.sm,
   },
   infoItem: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
     columnGap: spacing.xs,
   },
 });
