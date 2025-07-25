@@ -1,12 +1,12 @@
-import { Image } from "@/src/components/Image/Image";
-import { InfoCard } from "@/src/components/InfoCard/InfoCard";
-import { Loader } from "@/src/components/Loader/Loader";
-import { spacing } from "@/src/constants";
-import { useGetCharacter } from "@/src/hooks/api/useGetCharacter";
-import { Title } from "@/src/typography";
-import { useLocalSearchParams } from "expo-router";
-import { ScrollView, StyleSheet, View } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { Image } from '@/src/components/Image/Image';
+import { InfoCard } from '@/src/components/InfoCard/InfoCard';
+import { Loader } from '@/src/components/Loader/Loader';
+import { spacing } from '@/src/constants';
+import { useGetCharacter } from '@/src/hooks/api/useGetCharacter';
+import { Title } from '@/src/typography';
+import { useLocalSearchParams } from 'expo-router';
+import { ScrollView, StyleSheet, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 type CharacterDetailsParams = {
   id: string;
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
   },
   image: {
-    width: "100%",
+    width: '100%',
     height: 250,
   },
   content: {

@@ -1,9 +1,9 @@
-import { api } from "../apiHelper";
-import { GetAllCharactersResponse, GetCharacterByIdResponse } from "./models";
+import { api } from '../apiHelper';
+import { GetAllCharactersResponse, GetCharacterByIdResponse } from './models';
 
 export const getDisneyCharacters = async (page: number) => {
   const res = await api.get<GetAllCharactersResponse>(
-    `/character?page=${page}`
+    `/character?page=${page}`,
   );
   return res;
 };
