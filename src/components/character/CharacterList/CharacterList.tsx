@@ -18,14 +18,20 @@ export const CharacterList = (props: CharacterListProps) => {
       {...props}
       data={data}
       keyExtractor={(item) => item.url}
-      renderItem={({ item }) => {
+      renderItem={({ item, index }) => {
         const onPress = () => {
           router.push({
             pathname: "/character-details",
             params: { id: item._id },
           });
         };
-        return <CharacterListItem character={item} onPress={onPress} />;
+        return (
+          <CharacterListItem
+            character={item}
+            onPress={onPress}
+            testID={`character-item-${index}`}
+          />
+        );
       }}
       ListFooterComponent={
         isFetching ? <Loader containerStyle={styles.loaderContainer} /> : null

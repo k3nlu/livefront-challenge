@@ -43,16 +43,23 @@ const CharacterDetails = () => {
         { paddingBottom: insets.bottom },
       ]}
     >
-      <Image uri={imageUrl} style={styles.image} />
+      <Image uri={imageUrl} style={styles.image} testID="character-image" />
       <View style={styles.content}>
-        {name && <Title style={styles.title}>{name}</Title>}
-
+        {name && (
+          <Title style={styles.title} testID="character-name">
+            {name}
+          </Title>
+        )}
         {films && <InfoCard title="Films" infoItems={films} />}
         {shortFilms && <InfoCard title="Short Films" infoItems={shortFilms} />}
         {tvShows && <InfoCard title="TV Shows" infoItems={tvShows} />}
         {videoGames && <InfoCard title="Video Games" infoItems={videoGames} />}
         {parkAttractions && (
-          <InfoCard title="Park Attractions" infoItems={parkAttractions} />
+          <InfoCard
+            title="Park Attractions"
+            infoItems={parkAttractions}
+            testID="park-attractions"
+          />
         )}
         {allies && <InfoCard title="Allies" infoItems={allies} />}
         {enemies && <InfoCard title="Enemies" infoItems={enemies} />}
